@@ -32,7 +32,7 @@
 
 
 /**
- * \defgroup doc_driver_system_protected_io Protected IO
+ * \defgroup doc_driver_system_protected_io Protected IOcv b
  * \ingroup doc_driver_system
  *
  * \section doc_driver_protected_io_rev Revision History
