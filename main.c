@@ -22,7 +22,9 @@
 */
 #include "mcc_generated_files/mcc.h"
 #include "SSD1306.h"
+#include "I2C.h"
 #include <stdio.h>
+
 /*
     Main application
 */
@@ -30,21 +32,23 @@
 int main(void)
 {
     /* Initializes MCU, drivers and middleware */
-    
     SYSTEM_Initialize();
     SSD1306_int();
-    /*
-    SSD1306_PrintChar('F');
-    SSD1306_PrintChar('U');
-    SSD1306_PrintChar('C');
-    SSD1306_PrintChar('K');
-    SSD1306_PrintChar(' ');
-    SSD1306_PrintChar(' ');
-    SSD1306_PrintChar('Y');
-    SSD1306_PrintChar('O');
-    SSD1306_PrintChar('U');*/
-    char str[]="Hello World!";
-    SSD1306_PrintStr(str);
+    char str[]="Temp: 111";
+    char s[]={0x7f,'F'};
+    char ss[]=" ";
+ 
+    SSD1306_PrintStr(str,0,0);
+    SSD1306_PrintStr(str,4,0);
+    SSD1306_PrintStr(s,0,80);
+    SSD1306_PrintStr(s,4,80);
+   
+    SSD1306_PrintStr(ss,1,0);
+    while(0){
+        
+        
+    };
+
 }
 
 

@@ -38,7 +38,8 @@
       </logicalFolder>
       <itemPath>SSD1306.h</itemPath>
       <itemPath>fonts.h</itemPath>
-      <itemPath>ICFUNC.h</itemPath>
+      <itemPath>BME280.h</itemPath>
+      <itemPath>I2C.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -64,6 +65,8 @@
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>SSD1306.c</itemPath>
+      <itemPath>BME280.c</itemPath>
+      <itemPath>I2C.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -264,7 +267,7 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="updi"/>
         <property key="communication.speed" value="0.500"/>
-        <property key="debugoptions.useswbreakpoints" value="true"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"
@@ -286,8 +289,6 @@
         <property key="memories.programmemory.ranges" value="0-7ff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/edog0049a/MPLABXProjects/SSD1306 .X/debug/default/SSD1306 _ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

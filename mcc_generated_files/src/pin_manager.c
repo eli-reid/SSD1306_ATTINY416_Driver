@@ -99,7 +99,7 @@ void PORT_Initialize(void)
         *((uint8_t *)&PORTA + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
     }
     
-    for (uint8_t i = 0; i < 8; i++) {
+    for (uint8_t i = 2; i < 8; i++) {
         *((uint8_t *)&PORTB + 0x10 + i) |= 1 << PORT_PULLUPEN_bp;
     }
     

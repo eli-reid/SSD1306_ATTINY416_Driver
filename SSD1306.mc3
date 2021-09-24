@@ -4489,12 +4489,12 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\include\pin_manager.h</file>
-         <hash>6acdab50921e7065cdd6c1f1f61a7ef11fdc967e0b8456e68b9401c6e662f81d</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\src\protected_io.S</file>
          <hash>69d7d2c54bccf38027e4950b66dadc2d9c0be7a2523ffbe4648ec79e87f33522</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\include\pin_manager.h</file>
+         <hash>6acdab50921e7065cdd6c1f1f61a7ef11fdc967e0b8456e68b9401c6e662f81d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\utils\compiler.h</file>
@@ -4509,12 +4509,12 @@
          <hash>c78b3c119a073c4a5f25b4a8b291d13e818ff4d2c76af1a9b22799c8c0c697d4</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\src\pin_manager.c</file>
-         <hash>9af50eebb61d8af991ee23403a57a9ce04e111a3e1b01569eb3a416cc4725e4b</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\utils\atomic.h</file>
          <hash>80e018fe02cd0c54394bb9a54dcf927d346410567dc6dded62bea9b49e322acf</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\src\pin_manager.c</file>
+         <hash>9af50eebb61d8af991ee23403a57a9ce04e111a3e1b01569eb3a416cc4725e4b</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\src\cpuint.c</file>
@@ -4549,12 +4549,12 @@
          <hash>02efe91f6b4b8b31e5d6141c604f6f918f641f26433ffc12de9de3106df36a2e</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\include\port.h</file>
-         <hash>ec36cbe1b794a19f6f116963b634f9609ffb79e1169a46faa7849485e9817c9c</hash>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>9201cdc58b8c61c49379b1147c101b5679d2b30ec141fd0258735dc99b146e12</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>75451f0aab2f5facdff1e4701bf20636d6e62b2fdbad3e9466824a948f367d6b</hash>
+         <file>mcc_generated_files\include\port.h</file>
+         <hash>ec36cbe1b794a19f6f116963b634f9609ffb79e1169a46faa7849485e9817c9c</hash>
       </entry>
       <entry>
          <file>main.c</file>
