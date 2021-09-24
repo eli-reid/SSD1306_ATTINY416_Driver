@@ -2,7 +2,6 @@
 
 void SSD1306_clr_screen(uint8_t color){
     // send buffer 4 times to = 128 width
-    
     for(int i=0;i<8;i++){
         I2C_Reset_Buffer(); 
         I2C_Buffer_Add1(0xB0 + i);
