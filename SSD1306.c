@@ -1,144 +1,74 @@
 #include "SSD1306.h"
 
-
-SSD1306_Buffer_t SSD1306_buffer = {
-  .Index = 0
-};
-SSD1306_Cursor_t SSD1306_Cursor = {
-    .Current_col = 1,
-    .Current_row = 1,
-    .Width = 128,
-    .Hieght = 8   
-};
-
-void IC_writeNBytes(twi0_address_t address, void* data, size_t len)
-{
-    while(!IC_Open(address)); // sit here until we get the bus..
-    IC_SetBuffer(data,len);
-    IC_SetAddressNackCallback(IC_SetRestartWriteCallback,NULL); //NACK polling?
-    IC_MasterWrite();
-    while(I2C0_BUSY == IC_Close()); // sit here until finished.
-}
 void SSD1306_clr_screen(uint8_t color){
     // send buffer 4 times to = 128 width
     
-    SSD1306_Buffer_Init(1);
-    memset(SSD1306_buffer.Buffer + 1, color, 33);
-    SSD1306_buffer.Index = 33;
-    SSD1306_send();
-    SSD1306_send();
-    SSD1306_send();
-    SSD1306_send();
-}
-void SSD1306_Buffer_Init(bool isData) {
-
-    if(isData)
-        SSD1306_buffer.Buffer[0] = SSD1306_CONTROL_DATA_STREAM;
-    else
-        SSD1306_buffer.Buffer[0] = SSD1306_CONTROL_CMD_STREAM;
-  SSD1306_buffer.Index = 1;
+    for(int i=0;i<8;i++){
+        I2C_Reset_Buffer(); 
+        I2C_Buffer_Add1(0xB0 + i);
+        I2C_Buffer_Add1(0x00);
+        I2C_Buffer_Add1(0x10);
+        SSD1306_send_CMD();
+        I2C_Fill_Buffer(color);
+        for (int j=0;j<4;j++)
+            SSD1306_send_data();
+    }
 }
 
-void SSD1306_BufferAdd1(uint8_t data) {
-  SSD1306_buffer.Buffer[SSD1306_buffer.Index++] = data;
-}
-
-void SSD1306_BufferAdd2(uint8_t data0, uint8_t data1) {
-  SSD1306_buffer.Buffer[SSD1306_buffer.Index++] = data0;
-  SSD1306_buffer.Buffer[SSD1306_buffer.Index++] = data1;
-}
-
-void SSD1306_BufferAdd3(uint8_t data0, uint8_t data1, uint8_t data2) {
-  SSD1306_buffer.Buffer[SSD1306_buffer.Index++] = data0;
-  SSD1306_buffer.Buffer[SSD1306_buffer.Index++] = data1;
-  SSD1306_buffer.Buffer[SSD1306_buffer.Index++] = data2;
-}
-
-void SSD1306_PrintChar(char chr) {
-  SSD1306_Buffer_Init(1);
+void SSD1306_PrintChar(char chr, uint8_t row, uint8_t col) {
+  I2C_Reset_Buffer();
   for(int i=0; i < 5; i++){
-    SSD1306_Increment_Cursor();
-    SSD1306_buffer.Buffer[SSD1306_buffer.Index++] = Font7x10[(chr - 32)][i] ;
+    I2C_Buffer_Add1(Font7x10[(chr - 32)][i]) ;
   }
-  SSD1306_send();
+ I2C_Buffer_Add3(0x00,0x00,0x00) ;
+ SSD1306_send_data();
+  
   return;
 }
 
-void SSD1306_PrintStr(char* str){
+void SSD1306_PrintStr(char* str, uint8_t row, uint8_t col){
+    I2C_Reset_Buffer();
+    I2C_Buffer_Add1(0xB0 + row);
+    I2C_Buffer_Add1((0x00) | (col & 0x0F));
+    I2C_Buffer_Add1((0x10) | (col>>4));
+    SSD1306_send_CMD();
     for(int i=0; i< strlen(str);i++)
-        SSD1306_PrintChar(str[i]);
+        SSD1306_PrintChar(str[i],row,col);
 }
 
-void SSD1306_send(){
-   IC_writeNBytes( SSD1306_ADDR, SSD1306_buffer.Buffer, SSD1306_buffer.Index);
+void SSD1306_send_data(){
+    I2C_Write(SSD1306_ADDR, SSD1306_CONTROL_DATA_STREAM);
+  
 }
-
-
-
-void SSD1306_Increment_Cursor(){
-        if(SSD1306_Cursor.Current_col++ == 128){
-            SSD1306_Cursor.Current_col = 1;
-            if(SSD1306_Cursor.Current_row++ == 8)
-                SSD1306_Cursor.Current_row = 1;
-        }
+void SSD1306_send_CMD(){
+   I2C_Write( SSD1306_ADDR, SSD1306_CONTROL_CMD_STREAM);
 }
-
-void SSD1306_Move_Cursor(int spaces){
-    
-    SSD1306_Buffer_Init(1);
-    for(int i=0; i<spaces; i++){
-        if(SSD1306_buffer.Index == 33) {
-         
-            SSD1306_send();  
-            SSD1306_Buffer_Init(1);   
-        }
-        SSD1306_BufferAdd1(0x00);
-        if(SSD1306_Cursor.Current_col++ < 129){
-            SSD1306_Cursor.Current_col=1;
-            if(SSD1306_Cursor.Current_row++ < 9)
-                SSD1306_Cursor.Current_row = 1;
-        }
-    }
-    SSD1306_send(); 
-}
-
-void SSD1306_Reset_Cursor(){
-    int f,g;
-    if(SSD1306_Cursor.Current_row == 0 && SSD1306_Cursor.Current_col == 0)
-        return;
-    f = SSD1306_Cursor.Hieght;
-    g = f*128-SSD1306_Cursor.Current_col;
-    SSD1306_Move_Cursor(g);
-} 
 
 void SSD1306_int(){
-    SSD1306_Buffer_Init(0); 
-    SSD1306_BufferAdd2(SSD1306_SET_MPLX,  SSD1306_HEIGHT - 1);
-    SSD1306_BufferAdd2(SSD1306_SET_OFFSET,0);
-    SSD1306_BufferAdd2(SSD1306_MEM_ADDR_MODE,0);
-    SSD1306_BufferAdd1(SSD1306_SET_START);
-    SSD1306_BufferAdd1(SSD1306_COL_NORM); 
-    SSD1306_BufferAdd1(SSD1306_ROW_NORM); 
-    SSD1306_BufferAdd2(0xDA,0x02);
-    SSD1306_BufferAdd2(SSD1306_SET_CONTRAST,200);
-    SSD1306_BufferAdd1(SSD1306_DISPLAY_NORMAL );
-    SSD1306_BufferAdd2(SSD1306_OSC, 0x81 );
-    SSD1306_BufferAdd2(SSD1306_CHARGE_PUMP ,SSD1306_CHARGE_PUMP_ON);
-    SSD1306_BufferAdd2(SSD1306_CHARGE_PERIOD , 2);
-    SSD1306_BufferAdd1(SSD1306_DISPLAY_ON);  
-    SSD1306_send();
+    I2C_Reset_Buffer();
+    I2C_Buffer_Add2(SSD1306_SET_MPLX,  SSD1306_HEIGHT - 1);
+    I2C_Buffer_Add2(SSD1306_SET_OFFSET,0);
+    I2C_Buffer_Add2(SSD1306_MEM_ADDR_MODE,0);
+    I2C_Buffer_Add1(SSD1306_SET_START);
+    I2C_Buffer_Add1(SSD1306_COL_NORM); 
+    I2C_Buffer_Add1(SSD1306_ROW_NORM); 
+    I2C_Buffer_Add2(0x20,0x02);//set page address mode
+    I2C_Buffer_Add3(0x22,0,7); //set page range
+    I2C_Buffer_Add3(0x21,0,127);//set col range
+    I2C_Buffer_Add2(0xDA,0x00);
+    I2C_Buffer_Add2(SSD1306_SET_CONTRAST,200);
+    I2C_Buffer_Add1(SSD1306_DISPLAY_NORMAL );
+    I2C_Buffer_Add2(SSD1306_OSC, 0x81 );
+    I2C_Buffer_Add2(SSD1306_CHARGE_PUMP ,SSD1306_CHARGE_PUMP_ON);
+    I2C_Buffer_Add2(SSD1306_CHARGE_PERIOD , 2);
+    I2C_Buffer_Add1(SSD1306_DISPLAY_ON);  
+    SSD1306_send_CMD();
     SSD1306_Screen_Test();
 }
 
 void SSD1306_Screen_Test(){
-    int i=0;
-    while(i<8){
-        i++;
+
         SSD1306_clr_screen(0xff);
-    };
-    i=0;
-    while(i<8){
-        i++;
         SSD1306_clr_screen(0x00);
-    }; 
+
 }
