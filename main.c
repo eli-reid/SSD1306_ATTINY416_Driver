@@ -36,14 +36,11 @@ int main(void)
     SSD1306_int();
     char str[]="Temp: 111";
     char s[]={0x7f,'F'};
-    char ss[]=" ";
  
     SSD1306_PrintStr(str,0,0);
     SSD1306_PrintStr(str,4,0);
-    SSD1306_PrintStr(s,0,80);
-    SSD1306_PrintStr(s,4,80);
-   
-    SSD1306_PrintStr(ss,1,0);
+    SSD1306_PrintStr(s,0,72);
+    SSD1306_PrintStr(s,4,72);
     while(0){
         
         

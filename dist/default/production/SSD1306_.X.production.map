@@ -495,7 +495,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x5f50
+.debug_info     0x0000000000000000     0x5f20
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x16bc C:/Users/edog0049a/.mchp_packs/Microchip/ATtiny_DFP/2.7.128/xc8/avr/lib/avrxmega3/short-calls/crtattiny416.o
  .debug_info    0x00000000000016bc       0x7a build/default/production/mcc_generated_files/src/protected_io.o
@@ -504,9 +504,9 @@ END GROUP
  .debug_info    0x000000000000217e     0x1973 build/default/production/mcc_generated_files/src/twi0_master.o
  .debug_info    0x0000000000003af1      0x7f0 build/default/production/mcc_generated_files/device_config.o
  .debug_info    0x00000000000042e1      0x96a build/default/production/mcc_generated_files/mcc.o
- .debug_info    0x0000000000004c4b      0x59d build/default/production/main.o
- .debug_info    0x00000000000051e8      0x80b build/default/production/SSD1306.o
- .debug_info    0x00000000000059f3      0x55d build/default/production/I2C.o
+ .debug_info    0x0000000000004c4b      0x56d build/default/production/main.o
+ .debug_info    0x00000000000051b8      0x80b build/default/production/SSD1306.o
+ .debug_info    0x00000000000059c3      0x55d build/default/production/I2C.o
 
 .debug_abbrev   0x0000000000000000     0x208f
  *(.debug_abbrev)
@@ -521,7 +521,7 @@ END GROUP
  .debug_abbrev  0x0000000000001e35      0x134 build/default/production/SSD1306.o
  .debug_abbrev  0x0000000000001f69      0x126 build/default/production/I2C.o
 
-.debug_line     0x0000000000000000     0x1845
+.debug_line     0x0000000000000000     0x1839
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x136 C:/Users/edog0049a/.mchp_packs/Microchip/ATtiny_DFP/2.7.128/xc8/avr/lib/avrxmega3/short-calls/crtattiny416.o
  .debug_line    0x0000000000000136       0x66 build/default/production/mcc_generated_files/src/protected_io.o
@@ -530,9 +530,9 @@ END GROUP
  .debug_line    0x0000000000000576      0xb01 build/default/production/mcc_generated_files/src/twi0_master.o
  .debug_line    0x0000000000001077       0xdf build/default/production/mcc_generated_files/device_config.o
  .debug_line    0x0000000000001156      0x248 build/default/production/mcc_generated_files/mcc.o
- .debug_line    0x000000000000139e       0xec build/default/production/main.o
- .debug_line    0x000000000000148a      0x22d build/default/production/SSD1306.o
- .debug_line    0x00000000000016b7      0x18e build/default/production/I2C.o
+ .debug_line    0x000000000000139e       0xe0 build/default/production/main.o
+ .debug_line    0x000000000000147e      0x22d build/default/production/SSD1306.o
+ .debug_line    0x00000000000016ab      0x18e build/default/production/I2C.o
 
 .debug_frame    0x0000000000000000      0x6cc
  *(.debug_frame)
@@ -624,412 +624,412 @@ LOAD data_init
                 0x0000000000000314       0x82 build/default/production/mcc_generated_files/src/pin_manager.o
                 0x0000000000000314                PIN_MANAGER_Initialize
 
-.text.main      0x0000000000000396       0x76
- .text.main     0x0000000000000396       0x76 build/default/production/main.o
-                0x0000000000000396                main
-
 .text.IC_DO_TX_EMPTY
-                0x000000000000040c       0x6c
+                0x0000000000000396       0x6c
  .text.IC_DO_TX_EMPTY
-                0x000000000000040c       0x6c build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000396       0x6c build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.SSD1306_PrintStr
-                0x0000000000000478       0x6c
+                0x0000000000000402       0x6c
  .text.SSD1306_PrintStr
-                0x0000000000000478       0x6c build/default/production/SSD1306.o
-                0x0000000000000478                SSD1306_PrintStr
+                0x0000000000000402       0x6c build/default/production/SSD1306.o
+                0x0000000000000402                SSD1306_PrintStr
 
-.text.IC_DO_TX  0x00000000000004e4       0x68
+.text.IC_DO_TX  0x000000000000046e       0x68
  .text.IC_DO_TX
-                0x00000000000004e4       0x68 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x000000000000046e       0x68 build/default/production/mcc_generated_files/src/twi0_master.o
 
-.text.IC_Open   0x000000000000054c       0x64
- .text.IC_Open  0x000000000000054c       0x64 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x000000000000054c                IC_Open
+.text.IC_Open   0x00000000000004d6       0x64
+ .text.IC_Open  0x00000000000004d6       0x64 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x00000000000004d6                IC_Open
+
+.text.main      0x000000000000053a       0x64
+ .text.main     0x000000000000053a       0x64 build/default/production/main.o
+                0x000000000000053a                main
 
 .text.SSD1306_int
-                0x00000000000005b0       0x62
+                0x000000000000059e       0x62
  .text.SSD1306_int
-                0x00000000000005b0       0x62 build/default/production/SSD1306.o
-                0x00000000000005b0                SSD1306_int
+                0x000000000000059e       0x62 build/default/production/SSD1306.o
+                0x000000000000059e                SSD1306_int
 
 .text.IC_MasterIsr
-                0x0000000000000612       0x52
+                0x0000000000000600       0x52
  .text.IC_MasterIsr
-                0x0000000000000612       0x52 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000600       0x52 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_set_callback
-                0x0000000000000664       0x4a
+                0x0000000000000652       0x4a
  .text.IC_set_callback
-                0x0000000000000664       0x4a build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000652       0x4a build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.SSD1306_PrintChar
-                0x00000000000006ae       0x48
+                0x000000000000069c       0x48
  .text.SSD1306_PrintChar
-                0x00000000000006ae       0x48 build/default/production/SSD1306.o
-                0x00000000000006ae                SSD1306_PrintChar
+                0x000000000000069c       0x48 build/default/production/SSD1306.o
+                0x000000000000069c                SSD1306_PrintChar
 
-.text.IC_Close  0x00000000000006f6       0x42
+.text.IC_Close  0x00000000000006e4       0x42
  .text.IC_Close
-                0x00000000000006f6       0x42 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x00000000000006f6                IC_Close
+                0x00000000000006e4       0x42 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x00000000000006e4                IC_Close
 
 .text.CLKCTRL_Initialize
-                0x0000000000000738       0x40
+                0x0000000000000726       0x40
  .text.CLKCTRL_Initialize
-                0x0000000000000738       0x40 build/default/production/mcc_generated_files/mcc.o
-                0x0000000000000738                CLKCTRL_Initialize
+                0x0000000000000726       0x40 build/default/production/mcc_generated_files/mcc.o
+                0x0000000000000726                CLKCTRL_Initialize
 
 .text.IC_DO_ADDRESS_NACK
-                0x0000000000000778       0x3e
+                0x0000000000000766       0x3e
  .text.IC_DO_ADDRESS_NACK
-                0x0000000000000778       0x3e build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000766       0x3e build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.I2C_Buffer_Add3
-                0x00000000000007b6       0x3a
+                0x00000000000007a4       0x3a
  .text.I2C_Buffer_Add3
-                0x00000000000007b6       0x3a build/default/production/I2C.o
-                0x00000000000007b6                I2C_Buffer_Add3
+                0x00000000000007a4       0x3a build/default/production/I2C.o
+                0x00000000000007a4                I2C_Buffer_Add3
 
 .text.PORT_Initialize
-                0x00000000000007f0       0x38
+                0x00000000000007de       0x38
  .text.PORT_Initialize
-                0x00000000000007f0       0x38 build/default/production/mcc_generated_files/src/pin_manager.o
-                0x00000000000007f0                PORT_Initialize
+                0x00000000000007de       0x38 build/default/production/mcc_generated_files/src/pin_manager.o
+                0x00000000000007de                PORT_Initialize
 
 .text.IC_DO_BUS_COLLISION
-                0x0000000000000828       0x36
+                0x0000000000000816       0x36
  .text.IC_DO_BUS_COLLISION
-                0x0000000000000828       0x36 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000816       0x36 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.I2C_Write
-                0x000000000000085e       0x32
+                0x000000000000084c       0x32
  .text.I2C_Write
-                0x000000000000085e       0x32 build/default/production/I2C.o
-                0x000000000000085e                I2C_Write
+                0x000000000000084c       0x32 build/default/production/I2C.o
+                0x000000000000084c                I2C_Write
 
 .text.SSD1306_clr_screen
-                0x0000000000000890       0x30
+                0x000000000000087e       0x30
  .text.SSD1306_clr_screen
-                0x0000000000000890       0x30 build/default/production/SSD1306.o
-                0x0000000000000890                SSD1306_clr_screen
+                0x000000000000087e       0x30 build/default/production/SSD1306.o
+                0x000000000000087e                SSD1306_clr_screen
 
 .text.IC_MasterOperation
-                0x00000000000008c0       0x2e
+                0x00000000000008ae       0x2e
  .text.IC_MasterOperation
-                0x00000000000008c0       0x2e build/default/production/mcc_generated_files/src/twi0_master.o
-                0x00000000000008c0                IC_MasterOperation
+                0x00000000000008ae       0x2e build/default/production/mcc_generated_files/src/twi0_master.o
+                0x00000000000008ae                IC_MasterOperation
 
 .text.I2C_Buffer_Add2
-                0x00000000000008ee       0x2c
+                0x00000000000008dc       0x2c
  .text.I2C_Buffer_Add2
-                0x00000000000008ee       0x2c build/default/production/I2C.o
-                0x00000000000008ee                I2C_Buffer_Add2
+                0x00000000000008dc       0x2c build/default/production/I2C.o
+                0x00000000000008dc                I2C_Buffer_Add2
 
 .text.IC_SetBuffer
-                0x000000000000091a       0x22
+                0x0000000000000908       0x22
  .text.IC_SetBuffer
-                0x000000000000091a       0x22 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x000000000000091a                IC_SetBuffer
+                0x0000000000000908       0x22 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000908                IC_SetBuffer
 
 .text.IC_Poller
-                0x000000000000093c       0x20
+                0x000000000000092a       0x20
  .text.IC_Poller
-                0x000000000000093c       0x20 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x000000000000093c                IC_Poller
+                0x000000000000092a       0x20 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x000000000000092a                IC_Poller
 
 .text.__vector_2
-                0x000000000000095c       0x1e
+                0x000000000000094a       0x1e
  .text.__vector_2
-                0x000000000000095c       0x1e build/default/production/mcc_generated_files/mcc.o
-                0x000000000000095c                __vector_2
+                0x000000000000094a       0x1e build/default/production/mcc_generated_files/mcc.o
+                0x000000000000094a                __vector_2
 
 .text.IC_DO_SEND_ADR_READ
-                0x000000000000097a       0x1a
+                0x0000000000000968       0x1a
  .text.IC_DO_SEND_ADR_READ
-                0x000000000000097a       0x1a build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000968       0x1a build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_Initialize
-                0x0000000000000994       0x1a
+                0x0000000000000982       0x1a
  .text.IC_Initialize
-                0x0000000000000994       0x1a build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000994                IC_Initialize
+                0x0000000000000982       0x1a build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000982                IC_Initialize
 
 .text.IC_DO_SEND_ADR_WRITE
-                0x00000000000009ae       0x18
+                0x000000000000099c       0x18
  .text.IC_DO_SEND_ADR_WRITE
-                0x00000000000009ae       0x18 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x000000000000099c       0x18 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.CPUINT_Initialize
-                0x00000000000009c6       0x16
+                0x00000000000009b4       0x16
  .text.CPUINT_Initialize
-                0x00000000000009c6       0x16 build/default/production/mcc_generated_files/src/cpuint.o
-                0x00000000000009c6                CPUINT_Initialize
+                0x00000000000009b4       0x16 build/default/production/mcc_generated_files/src/cpuint.o
+                0x00000000000009b4                CPUINT_Initialize
 
 .text.IC_DO_BUS_ERROR
-                0x00000000000009dc       0x16
+                0x00000000000009ca       0x16
  .text.IC_DO_BUS_ERROR
-                0x00000000000009dc       0x16 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x00000000000009ca       0x16 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_RX_NACK_STOP
-                0x00000000000009f2       0x16
+                0x00000000000009e0       0x16
  .text.IC_DO_RX_NACK_STOP
-                0x00000000000009f2       0x16 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x00000000000009e0       0x16 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.BOD_Initialize
-                0x0000000000000a08       0x16
+                0x00000000000009f6       0x16
  .text.BOD_Initialize
-                0x0000000000000a08       0x16 build/default/production/mcc_generated_files/mcc.o
-                0x0000000000000a08                BOD_Initialize
+                0x00000000000009f6       0x16 build/default/production/mcc_generated_files/mcc.o
+                0x00000000000009f6                BOD_Initialize
 
 .text.I2C_Fill_Buffer
-                0x0000000000000a1e       0x16
+                0x0000000000000a0c       0x16
  .text.I2C_Fill_Buffer
-                0x0000000000000a1e       0x16 build/default/production/I2C.o
-                0x0000000000000a1e                I2C_Fill_Buffer
+                0x0000000000000a0c       0x16 build/default/production/I2C.o
+                0x0000000000000a0c                I2C_Fill_Buffer
 
 .text.I2C_Buffer_Add1
-                0x0000000000000a34       0x16
+                0x0000000000000a22       0x16
  .text.I2C_Buffer_Add1
-                0x0000000000000a34       0x16 build/default/production/I2C.o
-                0x0000000000000a34                I2C_Buffer_Add1
+                0x0000000000000a22       0x16 build/default/production/I2C.o
+                0x0000000000000a22                I2C_Buffer_Add1
 
 .text.IC_DO_RESET
-                0x0000000000000a4a       0x14
+                0x0000000000000a38       0x14
  .text.IC_DO_RESET
-                0x0000000000000a4a       0x14 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000a38       0x14 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_SEND_STOP
-                0x0000000000000a5e       0x14
+                0x0000000000000a4c       0x14
  .text.IC_DO_SEND_STOP
-                0x0000000000000a5e       0x14 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000a4c       0x14 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_IDLE
-                0x0000000000000a72       0x12
+                0x0000000000000a60       0x12
  .text.IC_DO_IDLE
-                0x0000000000000a72       0x12 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000a60       0x12 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_MasterResetBus
-                0x0000000000000a84       0x12
+                0x0000000000000a72       0x12
  .text.IC_MasterResetBus
-                0x0000000000000a84       0x12 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000a84                IC_MasterResetBus
+                0x0000000000000a72       0x12 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000a72                IC_MasterResetBus
 
 .text.IC_MasterWaitForEvent
-                0x0000000000000a96       0x12
+                0x0000000000000a84       0x12
  .text.IC_MasterWaitForEvent
-                0x0000000000000a96       0x12 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000a96                IC_MasterWaitForEvent
+                0x0000000000000a84       0x12 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000a84                IC_MasterWaitForEvent
 
 .text.SYSTEM_Initialize
-                0x0000000000000aa8       0x10
+                0x0000000000000a96       0x10
  .text.SYSTEM_Initialize
-                0x0000000000000aa8       0x10 build/default/production/mcc_generated_files/mcc.o
-                0x0000000000000aa8                SYSTEM_Initialize
+                0x0000000000000a96       0x10 build/default/production/mcc_generated_files/mcc.o
+                0x0000000000000a96                SYSTEM_Initialize
 
 .text.SLPCTRL_Initialize
-                0x0000000000000ab8        0xe
+                0x0000000000000aa6        0xe
  .text.SLPCTRL_Initialize
-                0x0000000000000ab8        0xe build/default/production/mcc_generated_files/mcc.o
-                0x0000000000000ab8                SLPCTRL_Initialize
+                0x0000000000000aa6        0xe build/default/production/mcc_generated_files/mcc.o
+                0x0000000000000aa6                SLPCTRL_Initialize
 
 .text.WDT_Initialize
-                0x0000000000000ac6        0xe
+                0x0000000000000ab4        0xe
  .text.WDT_Initialize
-                0x0000000000000ac6        0xe build/default/production/mcc_generated_files/mcc.o
-                0x0000000000000ac6                WDT_Initialize
+                0x0000000000000ab4        0xe build/default/production/mcc_generated_files/mcc.o
+                0x0000000000000ab4                WDT_Initialize
 
-.text.avrlibc   0x0000000000000ad4        0xe
- .text.avrlibc  0x0000000000000ad4        0xe c:/program files/microchip/xc8/v2.20/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3/short-calls\libc.a(memset.o)
-                0x0000000000000ad4                memset
+.text.avrlibc   0x0000000000000ac2        0xe
+ .text.avrlibc  0x0000000000000ac2        0xe c:/program files/microchip/xc8/v2.20/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3/short-calls\libc.a(memset.o)
+                0x0000000000000ac2                memset
 
 .text.IC_MasterDisableIrq
-                0x0000000000000ae2        0xc
+                0x0000000000000ad0        0xc
  .text.IC_MasterDisableIrq
-                0x0000000000000ae2        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000ae2                IC_MasterDisableIrq
+                0x0000000000000ad0        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000ad0                IC_MasterDisableIrq
 
 .text.IC_MasterClearIrq
-                0x0000000000000aee        0xc
+                0x0000000000000adc        0xc
  .text.IC_MasterClearIrq
-                0x0000000000000aee        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000aee                IC_MasterClearIrq
+                0x0000000000000adc        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000adc                IC_MasterClearIrq
 
 .text.IC_MasterBusErrorOverride
-                0x0000000000000afa        0xc
+                0x0000000000000ae8        0xc
  .text.IC_MasterBusErrorOverride
-                0x0000000000000afa        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000afa                IC_MasterBusErrorOverride
+                0x0000000000000ae8        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000ae8                IC_MasterBusErrorOverride
 
 .text.IC_MasterArbitrationlostOverride
-                0x0000000000000b06        0xc
+                0x0000000000000af4        0xc
  .text.IC_MasterArbitrationlostOverride
-                0x0000000000000b06        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b06                IC_MasterArbitrationlostOverride
+                0x0000000000000af4        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000af4                IC_MasterArbitrationlostOverride
 
 .text.IC_MasterIsRxOrTx
-                0x0000000000000b12        0xc
+                0x0000000000000b00        0xc
  .text.IC_MasterIsRxOrTx
-                0x0000000000000b12        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b12                IC_MasterIsRxOrTx
+                0x0000000000000b00        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b00                IC_MasterIsRxOrTx
 
 .text.IC_MasterClearBusCollision
-                0x0000000000000b1e        0xc
+                0x0000000000000b0c        0xc
  .text.IC_MasterClearBusCollision
-                0x0000000000000b1e        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b1e                IC_MasterClearBusCollision
+                0x0000000000000b0c        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b0c                IC_MasterClearBusCollision
 
 .text.IC_MasterStop
-                0x0000000000000b2a        0xc
+                0x0000000000000b18        0xc
  .text.IC_MasterStop
-                0x0000000000000b2a        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b2a                IC_MasterStop
+                0x0000000000000b18        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b18                IC_MasterStop
 
 .text.IC_MasterSendAck
-                0x0000000000000b36        0xc
+                0x0000000000000b24        0xc
  .text.IC_MasterSendAck
-                0x0000000000000b36        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b36                IC_MasterSendAck
+                0x0000000000000b24        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b24                IC_MasterSendAck
 
 .text.IC_MasterSendNack
-                0x0000000000000b42        0xc
+                0x0000000000000b30        0xc
  .text.IC_MasterSendNack
-                0x0000000000000b42        0xc build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b42                IC_MasterSendNack
+                0x0000000000000b30        0xc build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b30                IC_MasterSendNack
 
 .text.IC_SetAddressNackCallback
-                0x0000000000000b4e        0xa
+                0x0000000000000b3c        0xa
  .text.IC_SetAddressNackCallback
-                0x0000000000000b4e        0xa build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b4e                IC_SetAddressNackCallback
+                0x0000000000000b3c        0xa build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b3c                IC_SetAddressNackCallback
 
 .text.IC_MasterIsNack
-                0x0000000000000b58        0xa
+                0x0000000000000b46        0xa
  .text.IC_MasterIsNack
-                0x0000000000000b58        0xa build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b58                IC_MasterIsNack
+                0x0000000000000b46        0xa build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b46                IC_MasterIsNack
 
-.rodata         0x0000000000808b62        0xa load address 0x0000000000000b62
- .rodata        0x0000000000808b62        0xa build/default/production/main.o
+.rodata         0x0000000000808b50        0xa load address 0x0000000000000b50
+ .rodata        0x0000000000808b50        0xa build/default/production/main.o
 
 .text.SSD1306_Screen_Test
-                0x0000000000000b6c        0xa
+                0x0000000000000b5a        0xa
  .text.SSD1306_Screen_Test
-                0x0000000000000b6c        0xa build/default/production/SSD1306.o
-                0x0000000000000b6c                SSD1306_Screen_Test
+                0x0000000000000b5a        0xa build/default/production/SSD1306.o
+                0x0000000000000b5a                SSD1306_Screen_Test
 
 .text.protected_write_io
-                0x0000000000000b76        0x8
+                0x0000000000000b64        0x8
  .text.protected_write_io
-                0x0000000000000b76        0x8 build/default/production/mcc_generated_files/src/protected_io.o
-                0x0000000000000b76                protected_write_io
+                0x0000000000000b64        0x8 build/default/production/mcc_generated_files/src/protected_io.o
+                0x0000000000000b64                protected_write_io
 
 .text.SSD1306_send_data
-                0x0000000000000b7e        0x8
+                0x0000000000000b6c        0x8
  .text.SSD1306_send_data
-                0x0000000000000b7e        0x8 build/default/production/SSD1306.o
-                0x0000000000000b7e                SSD1306_send_data
+                0x0000000000000b6c        0x8 build/default/production/SSD1306.o
+                0x0000000000000b6c                SSD1306_send_data
 
 .text.SSD1306_send_CMD
-                0x0000000000000b86        0x8
+                0x0000000000000b74        0x8
  .text.SSD1306_send_CMD
-                0x0000000000000b86        0x8 build/default/production/SSD1306.o
-                0x0000000000000b86                SSD1306_send_CMD
+                0x0000000000000b74        0x8 build/default/production/SSD1306.o
+                0x0000000000000b74                SSD1306_send_CMD
 
 .text.I2C_Reset_Buffer
-                0x0000000000000b8e        0x8
+                0x0000000000000b7c        0x8
  .text.I2C_Reset_Buffer
-                0x0000000000000b8e        0x8 build/default/production/I2C.o
-                0x0000000000000b8e                I2C_Reset_Buffer
+                0x0000000000000b7c        0x8 build/default/production/I2C.o
+                0x0000000000000b7c                I2C_Reset_Buffer
 
 .text.IC_MasterWrite
-                0x0000000000000b96        0x6
+                0x0000000000000b84        0x6
  .text.IC_MasterWrite
-                0x0000000000000b96        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000b96                IC_MasterWrite
+                0x0000000000000b84        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b84                IC_MasterWrite
 
 .text.IC_DO_TX_ACK
-                0x0000000000000b9c        0x6
+                0x0000000000000b8a        0x6
  .text.IC_DO_TX_ACK
-                0x0000000000000b9c        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b8a        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_RX_ACK
-                0x0000000000000ba2        0x6
+                0x0000000000000b90        0x6
  .text.IC_DO_RX_ACK
-                0x0000000000000ba2        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b90        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_RX_NACK_RESTART
-                0x0000000000000ba8        0x6
+                0x0000000000000b96        0x6
  .text.IC_DO_RX_NACK_RESTART
-                0x0000000000000ba8        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b96        0x6 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_RETURN_STOP
-                0x0000000000000bae        0x4
+                0x0000000000000b9c        0x4
  .text.IC_RETURN_STOP
-                0x0000000000000bae        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000b9c        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_RETURN_RESET
-                0x0000000000000bb2        0x4
+                0x0000000000000ba0        0x4
  .text.IC_RETURN_RESET
-                0x0000000000000bb2        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000ba0        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_SEND_RESTART
-                0x0000000000000bb6        0x4
+                0x0000000000000ba4        0x4
  .text.IC_DO_SEND_RESTART
-                0x0000000000000bb6        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000ba4        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_SEND_RESTART_READ
-                0x0000000000000bba        0x4
+                0x0000000000000ba8        0x4
  .text.IC_DO_SEND_RESTART_READ
-                0x0000000000000bba        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000ba8        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_DO_SEND_RESTART_WRITE
-                0x0000000000000bbe        0x4
+                0x0000000000000bac        0x4
  .text.IC_DO_SEND_RESTART_WRITE
-                0x0000000000000bbe        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000bac        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
 
 .text.IC_SetRestartWriteCallback
-                0x0000000000000bc2        0x4
+                0x0000000000000bb0        0x4
  .text.IC_SetRestartWriteCallback
-                0x0000000000000bc2        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
-                0x0000000000000bc2                IC_SetRestartWriteCallback
+                0x0000000000000bb0        0x4 build/default/production/mcc_generated_files/src/twi0_master.o
+                0x0000000000000bb0                IC_SetRestartWriteCallback
 
-.text           0x0000000000000bc6        0x2
- .text          0x0000000000000bc6        0x2 C:/Users/edog0049a/.mchp_packs/Microchip/ATtiny_DFP/2.7.128/xc8/avr/lib/avrxmega3/short-calls/crtattiny416.o
-                0x0000000000000bc6                __vector_22
-                0x0000000000000bc6                __vector_1
-                0x0000000000000bc6                __vector_24
-                0x0000000000000bc6                __vector_12
-                0x0000000000000bc6                __bad_interrupt
-                0x0000000000000bc6                __vector_6
-                0x0000000000000bc6                __vector_3
-                0x0000000000000bc6                __vector_23
-                0x0000000000000bc6                __vector_25
-                0x0000000000000bc6                __vector_11
-                0x0000000000000bc6                __vector_13
-                0x0000000000000bc6                __vector_17
-                0x0000000000000bc6                __vector_19
-                0x0000000000000bc6                __vector_7
-                0x0000000000000bc6                __vector_5
-                0x0000000000000bc6                __vector_4
-                0x0000000000000bc6                __vector_9
-                0x0000000000000bc6                __vector_21
-                0x0000000000000bc6                __vector_15
-                0x0000000000000bc6                __vector_8
-                0x0000000000000bc6                __vector_14
-                0x0000000000000bc6                __vector_10
-                0x0000000000000bc6                __vector_16
-                0x0000000000000bc6                __vector_18
-                0x0000000000000bc6                __vector_20
+.text           0x0000000000000bb4        0x2
+ .text          0x0000000000000bb4        0x2 C:/Users/edog0049a/.mchp_packs/Microchip/ATtiny_DFP/2.7.128/xc8/avr/lib/avrxmega3/short-calls/crtattiny416.o
+                0x0000000000000bb4                __vector_22
+                0x0000000000000bb4                __vector_1
+                0x0000000000000bb4                __vector_24
+                0x0000000000000bb4                __vector_12
+                0x0000000000000bb4                __bad_interrupt
+                0x0000000000000bb4                __vector_6
+                0x0000000000000bb4                __vector_3
+                0x0000000000000bb4                __vector_23
+                0x0000000000000bb4                __vector_25
+                0x0000000000000bb4                __vector_11
+                0x0000000000000bb4                __vector_13
+                0x0000000000000bb4                __vector_17
+                0x0000000000000bb4                __vector_19
+                0x0000000000000bb4                __vector_7
+                0x0000000000000bb4                __vector_5
+                0x0000000000000bb4                __vector_4
+                0x0000000000000bb4                __vector_9
+                0x0000000000000bb4                __vector_21
+                0x0000000000000bb4                __vector_15
+                0x0000000000000bb4                __vector_8
+                0x0000000000000bb4                __vector_14
+                0x0000000000000bb4                __vector_10
+                0x0000000000000bb4                __vector_16
+                0x0000000000000bb4                __vector_18
+                0x0000000000000bb4                __vector_20
 
 .data.IC_fsmStateTable
-                0x0000000000803f00       0x24 load address 0x0000000000000bc8
+                0x0000000000803f00       0x24 load address 0x0000000000000bb6
  .data.IC_fsmStateTable
                 0x0000000000803f00       0x24 build/default/production/mcc_generated_files/src/twi0_master.o
                 0x0000000000803f00                IC_fsmStateTable
 
 .data.I2C_buffer
-                0x0000000000803f48       0x22 load address 0x0000000000000bec
+                0x0000000000803f48       0x22 load address 0x0000000000000bda
  .data.I2C_buffer
                 0x0000000000803f48       0x22 build/default/production/I2C.o
                 0x0000000000803f48                I2C_buffer

@@ -17,7 +17,6 @@ extern "C" {
 #include <stdint.h>
 #include "mcc_generated_files/mcc.h"
 
-    
 typedef struct {
   uint8_t Index;
   uint8_t Buffer[I2C_BUFFER_SIZE];

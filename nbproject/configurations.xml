@@ -289,6 +289,8 @@
         <property key="memories.programmemory.ranges" value="0-7ff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/edog0049a/MPLABXProjects/SSD1306 .X/debug/default/SSD1306 _ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

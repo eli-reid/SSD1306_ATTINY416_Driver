@@ -62,8 +62,6 @@ void SSD1306_Screen_Test();
 void SDD1306_Send_data();
 void SDD1306_Send_CMD();
 
-
-
 #ifdef	__cplusplus
 }
 #endif

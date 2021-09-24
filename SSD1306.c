@@ -38,7 +38,6 @@ void SSD1306_PrintStr(char* str, uint8_t row, uint8_t col){
 
 void SSD1306_send_data(){
     I2C_Write(SSD1306_ADDR, SSD1306_CONTROL_DATA_STREAM);
-  
 }
 void SSD1306_send_CMD(){
    I2C_Write( SSD1306_ADDR, SSD1306_CONTROL_CMD_STREAM);
@@ -67,8 +66,6 @@ void SSD1306_int(){
 }
 
 void SSD1306_Screen_Test(){
-
         SSD1306_clr_screen(0xff);
         SSD1306_clr_screen(0x00);
-
 }
