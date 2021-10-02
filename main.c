@@ -23,27 +23,98 @@
 #include "mcc_generated_files/mcc.h"
 #include "SSD1306.h"
 #include "I2C.h"
+#include "SBUS.h"
 #include <stdio.h>
+#include <string.h>
 
+#include <avr/delay.h>
 /*
+ * 
     Main application
 */
-
+void OneWireWrite (uint8_t data) {
+  PORTA_set_pin_dir(6,PORT_DIR_OUT);    
+  for (int i = 0; i<8; i++) {
+    if ((data & 1) == 1) {
+        PORTA_set_pin_level(6,0);
+        _delay_us(6);
+        PORTA_set_pin_level(6,1); 
+        _delay_us(64);
+    }else{
+      PORTA_set_pin_level(6,0);
+      _delay_us(60);
+      PORTA_set_pin_level(6,1); 
+    _delay_us(10);
+    }
+        
+   
+    data = data >> 1;
+  }
+}
 int main(void)
 {
+
     /* Initializes MCU, drivers and middleware */
     SYSTEM_Initialize();
     SSD1306_int();
-    char str[]="Temp: 111";
-    char s[]={0x7f,'F'};
- 
-    SSD1306_PrintStr(str,0,0);
-    SSD1306_PrintStr(str,4,0);
-    SSD1306_PrintStr(s,0,72);
-    SSD1306_PrintStr(s,4,72);
-    while(0){
-        
-        
+   // char s[]={0x7f,'F'};
+  // SSD1306_PrintStr("Temp: 131",0,0,true);
+    //SSD1306_PrintStr(s,0,72,true);
+//_delay_ms(5000);
+
+
+    char t[2];
+    uint8_t h;
+   
+    //SBUS_Read_Bytes(5);   
+    //ltoa (DataBytes[1],t,10); 
+    //SSD1306_PrintStr(t,0,h,false);
+    
+    
+    while(1){
+    SBUS_Reset();
+    memset(DataBytes, 0x00, 9);
+    PORTB_set_pin_dir(5,PORT_DIR_OUT);    
+    PORTB_set_pin_level(5,0);
+    _delay_ms(20);
+    PORTB_set_pin_level(5,1);
+    PORTB_set_pin_dir(5,PORT_DIR_IN);
+    int j=0;  
+    int i = 0;
+            for (i = 0; i<8; i++) {
+                ;
+                //DELAY_microseconds(15);
+//_delay_ms(15);
+            h = h | PORTB_get_pin_level(5) << i;
+           DELAY_microseconds(15);
+            
+            if (i==7){
+               DataBytes[j] = h;
+               j++;
+               i=0;
+            }
+            if(j==5)
+                break;
+    }
+    if(DataBytes[0]+DataBytes[1]+DataBytes[2]+DataBytes[3] != DataBytes[4])
+         SSD1306_PrintStr("ERROR! 3",2,0,1);
+    
+    ltoa (DataBytes[0],t,10);
+    SSD1306_PrintStr(t,0,0,1);
+    
+    ltoa (DataBytes[1],t,10);
+    SSD1306_PrintStr(t,0,32,1);
+    
+    ltoa (DataBytes[2],t,10);
+    SSD1306_PrintStr(t,0,64,1);
+    
+   ltoa (DataBytes[3],t,10);
+    SSD1306_PrintStr(t,1,0,1);
+    
+     ltoa (DataBytes[4],t,10);
+    SSD1306_PrintStr(t,1,32,1);
+    _delay_ms(1000);
+  
     };
 
 }

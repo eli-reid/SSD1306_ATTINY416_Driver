@@ -25,7 +25,8 @@ build/default/production/SSD1306.o.d build/default/production/SSD1306.o: \
  mcc_generated_files/include/pin_manager.h \
  mcc_generated_files/include/port.h \
  mcc_generated_files/include/../utils/compiler.h \
- mcc_generated_files/include/cpuint.h mcc_generated_files/include/ccp.h \
+ mcc_generated_files/delay.h mcc_generated_files/include/cpuint.h \
+ mcc_generated_files/include/ccp.h \
  mcc_generated_files/include/../include/protected_io.h \
  mcc_generated_files/include/../utils/atomic.h \
  mcc_generated_files/include/twi0_master.h \
@@ -86,6 +87,8 @@ mcc_generated_files/include/pin_manager.h:
 mcc_generated_files/include/port.h:
 
 mcc_generated_files/include/../utils/compiler.h:
+
+mcc_generated_files/delay.h:
 
 mcc_generated_files/include/cpuint.h:
 

@@ -1,26 +1,34 @@
 #include "I2C.h"
 
 I2C_Buffer_t I2C_buffer = {
-  .Index = 1
+  .Index = 1         
 };
 
 void I2C_Write(twi0_address_t address, uint8_t command)
 {
-    I2C_buffer.Buffer[0] = command;
+
     while(!IC_Open(address)); // sit here until we get the bus..
+    I2C_buffer.Buffer[0] = command;
     IC_SetBuffer(I2C_buffer.Buffer,I2C_buffer.Index);
     IC_SetAddressNackCallback(IC_SetRestartWriteCallback,NULL); //NACK polling?
     IC_MasterWrite();
     while(I2C0_BUSY == IC_Close()); // sit here until finished.
+
+}
+void I2C_Read(twi0_address_t address, uint8_t size){
+    while(!IC_Open(address)); // sit here until we get the bus..
+    IC_SetBuffer(I2C_buffer.Buffer,size);
+    IC_MasterRead();
+    while(I2C0_BUSY == IC_Close()); // sit here until finished.
 }
 void I2C_Reset_Buffer(){
-    I2C_buffer.Index = 1;
+    I2C_Fill_Buffer(0x00);
+    I2C_Set_Buffer_Index(1);
     
 }
 void I2C_Set_Buffer_Index(uint8_t Index){
     I2C_buffer.Index = Index;
 }
-
 void I2C_Fill_Buffer(uint8_t fill){
     memset(I2C_buffer.Buffer+1, fill, I2C_BUFFER_SIZE);
     I2C_buffer.Index = I2C_BUFFER_SIZE;

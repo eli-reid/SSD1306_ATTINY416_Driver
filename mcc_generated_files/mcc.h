@@ -40,6 +40,7 @@ extern "C" {
 
 #include "utils/compiler.h"
 #include "include/pin_manager.h"
+#include "delay.h"
 #include "include/cpuint.h"
 #include "include/twi0_master.h"
 #include "config/clock_config.h"

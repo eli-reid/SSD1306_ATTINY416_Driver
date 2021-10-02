@@ -12,6 +12,7 @@
         </logicalFolder>
         <logicalFolder name="examples" displayName="examples" projectFiles="true">
           <itemPath>mcc_generated_files/examples/twi0_master_example.h</itemPath>
+          <itemPath>mcc_generated_files/examples/DELAY_example.h</itemPath>
         </logicalFolder>
         <logicalFolder name="include" displayName="include" projectFiles="true">
           <itemPath>mcc_generated_files/include/port.h</itemPath>
@@ -35,11 +36,12 @@
           <itemPath>mcc_generated_files/utils/atomic.h</itemPath>
         </logicalFolder>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
+        <itemPath>mcc_generated_files/delay.h</itemPath>
       </logicalFolder>
       <itemPath>SSD1306.h</itemPath>
       <itemPath>fonts.h</itemPath>
-      <itemPath>BME280.h</itemPath>
       <itemPath>I2C.h</itemPath>
+      <itemPath>SBUS.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -51,8 +53,12 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="docs" displayName="docs" projectFiles="true">
+          <itemPath>mcc_generated_files/docs/delay.dox</itemPath>
+        </logicalFolder>
         <logicalFolder name="examples" displayName="examples" projectFiles="true">
           <itemPath>mcc_generated_files/examples/twi0_master_example.c</itemPath>
+          <itemPath>mcc_generated_files/examples/DELAY_example.c</itemPath>
         </logicalFolder>
         <logicalFolder name="src" displayName="src" projectFiles="true">
           <itemPath>mcc_generated_files/src/protected_io.S</itemPath>
@@ -62,11 +68,12 @@
         </logicalFolder>
         <itemPath>mcc_generated_files/device_config.c</itemPath>
         <itemPath>mcc_generated_files/mcc.c</itemPath>
+        <itemPath>mcc_generated_files/delay.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>SSD1306.c</itemPath>
-      <itemPath>BME280.c</itemPath>
       <itemPath>I2C.c</itemPath>
+      <itemPath>SBUS.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -267,7 +274,7 @@
         <property key="communication.activationmode" value="nohv"/>
         <property key="communication.interface" value="updi"/>
         <property key="communication.speed" value="0.500"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
         <property key="firmware.path"
                   value="Press to browse for a specific firmware version"/>
         <property key="firmware.toolpack"

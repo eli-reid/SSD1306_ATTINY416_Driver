@@ -57,7 +57,7 @@ extern "C" {
 void SSD1306_int();
 void SSD1306_clr_screen(uint8_t color);
 void SSD1306_PrintChar(char chr, uint8_t row,uint8_t col);
-void SSD1306_PrintStr(char* str, uint8_t row,uint8_t col);
+void SSD1306_PrintStr(char* str, uint8_t row,uint8_t col, bool bold);
 void SSD1306_Screen_Test();
 void SDD1306_Send_data();
 void SDD1306_Send_CMD();

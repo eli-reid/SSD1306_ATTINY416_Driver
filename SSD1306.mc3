@@ -14,6 +14,10 @@
          <string>class com.microchip.mcc.mcu8.interruptManager.cpuint.CPUINT</string>
       </entry>
       <entry>
+         <string>DELAY</string>
+         <string>class com.microchip.mcc.foundationservices.modules.softwaredriver.delay.DELAY</string>
+      </entry>
+      <entry>
          <string>Interrupt Manager</string>
          <string>class com.microchip.mcc.mcu8.interruptManager.InterruptManager</string>
       </entry>
@@ -44,6 +48,7 @@
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu8.Mcu8AVRPeripheralLibrary" version="2.8.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -601,6 +606,10 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CPUINT" registerAlias="STATUS" settingAlias="NMIEX"/>
          <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DELAY" name="usecaseComboSettings"/>
+         <value>Delay between two instructions</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Interrupt Manager" name="interruptLevelPriority"/>
@@ -4489,12 +4498,12 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\src\protected_io.S</file>
-         <hash>69d7d2c54bccf38027e4950b66dadc2d9c0be7a2523ffbe4648ec79e87f33522</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\include\pin_manager.h</file>
          <hash>6acdab50921e7065cdd6c1f1f61a7ef11fdc967e0b8456e68b9401c6e662f81d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\src\protected_io.S</file>
+         <hash>69d7d2c54bccf38027e4950b66dadc2d9c0be7a2523ffbe4648ec79e87f33522</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\utils\compiler.h</file>
@@ -4509,12 +4518,12 @@
          <hash>c78b3c119a073c4a5f25b4a8b291d13e818ff4d2c76af1a9b22799c8c0c697d4</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\utils\atomic.h</file>
-         <hash>80e018fe02cd0c54394bb9a54dcf927d346410567dc6dded62bea9b49e322acf</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\src\pin_manager.c</file>
          <hash>9af50eebb61d8af991ee23403a57a9ce04e111a3e1b01569eb3a416cc4725e4b</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\utils\atomic.h</file>
+         <hash>80e018fe02cd0c54394bb9a54dcf927d346410567dc6dded62bea9b49e322acf</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\src\cpuint.c</file>
@@ -4525,8 +4534,28 @@
          <hash>98adc596175f2e76d4d918685cf050032a3efb605901edb6be0a35dda05a57e9</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\examples\DELAY_example.c</file>
+         <hash>47873cc7d2b8297c1cd56e36645728ba5f6e43b78a2531ada46cd5ec535209e4</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\delay.c</file>
+         <hash>af652206ea697459b5368c63f1c35cf478272404e79f1cbe903a83cc5ff8a055</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\examples\twi0_master_example.c</file>
          <hash>dbe960f11997d5c7930db4bf66610adf0d0aa8c3844a7215cf53d682eae2cbd8</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\delay.h</file>
+         <hash>dda77102dba9adc0f9aef1c8c542cfee6d6cccc96446f4cd1bf07be2150a4d95</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\examples\DELAY_example.h</file>
+         <hash>f8597768870784ce15872fc5e89685064f1277fbbaa85018a8bc329ad3b895ec</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\docs\delay.dox</file>
+         <hash>13d4874d789b563dd4499efacd71882cbc38f8459da91ac17f13fa76079be93b</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\include\ccp.h</file>
@@ -4549,12 +4578,12 @@
          <hash>02efe91f6b4b8b31e5d6141c604f6f918f641f26433ffc12de9de3106df36a2e</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>9201cdc58b8c61c49379b1147c101b5679d2b30ec141fd0258735dc99b146e12</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\include\port.h</file>
          <hash>ec36cbe1b794a19f6f116963b634f9609ffb79e1169a46faa7849485e9817c9c</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>3ae0976fdbe785d60ba937474e77f96e0342a3940598d18a58beb20c99d9ebfa</hash>
       </entry>
       <entry>
          <file>main.c</file>

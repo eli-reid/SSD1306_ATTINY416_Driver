@@ -11,7 +11,7 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-#define I2C_BUFFER_SIZE 33    
+#define I2C_BUFFER_SIZE 41
 #include <string.h>
 #include <stdbool.h>
 #include <stdint.h>

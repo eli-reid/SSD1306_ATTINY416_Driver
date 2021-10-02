@@ -15,7 +15,12 @@ void SSD1306_clr_screen(uint8_t color){
 }
 
 void SSD1306_PrintChar(char chr, uint8_t row, uint8_t col) {
-  I2C_Reset_Buffer();
+    I2C_Reset_Buffer();
+    I2C_Buffer_Add1(0xB0 + row);
+    I2C_Buffer_Add1((0x00) | (col & 0x0F));
+    I2C_Buffer_Add1((0x10) | (col>>4));
+    SSD1306_send_CMD();
+    I2C_Reset_Buffer();
   for(int i=0; i < 5; i++){
     I2C_Buffer_Add1(Font7x10[(chr - 32)][i]) ;
   }
@@ -25,14 +30,20 @@ void SSD1306_PrintChar(char chr, uint8_t row, uint8_t col) {
   return;
 }
 
-void SSD1306_PrintStr(char* str, uint8_t row, uint8_t col){
-    I2C_Reset_Buffer();
-    I2C_Buffer_Add1(0xB0 + row);
-    I2C_Buffer_Add1((0x00) | (col & 0x0F));
-    I2C_Buffer_Add1((0x10) | (col>>4));
-    SSD1306_send_CMD();
-    for(int i=0; i< strlen(str);i++)
+void SSD1306_PrintStr(char* str, uint8_t row, uint8_t col, bool bold){
+    if(bold)
+        SSD1306_PrintStr(str,(row + 4),col,false);
+    
+    for(int i=0; i < strlen(str);i++){
         SSD1306_PrintChar(str[i],row,col);
+        col+=8;
+        if(i==15){
+            col=0;
+            row++;
+        }
+
+    }
+    return;
 }
 
 void SSD1306_send_data(){

@@ -21,7 +21,8 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  mcc_generated_files/include/pin_manager.h \
  mcc_generated_files/include/port.h \
  mcc_generated_files/include/../utils/compiler.h \
- mcc_generated_files/include/cpuint.h mcc_generated_files/include/ccp.h \
+ mcc_generated_files/delay.h mcc_generated_files/include/cpuint.h \
+ mcc_generated_files/include/ccp.h \
  mcc_generated_files/include/../include/protected_io.h \
  mcc_generated_files/include/../utils/atomic.h \
  mcc_generated_files/include/twi0_master.h \
@@ -30,7 +31,11 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  mcc_generated_files/config/clock_config.h SSD1306.h \
  c:\program\ files\microchip\xc8\v2.20\avr\avr\include\string.h fonts.h \
  c:\program\ files\microchip\xc8\v2.20\avr\avr\include\avr\pgmspace.h \
- I2C.h
+ I2C.h SBUS.h \
+ c:\program\ files\microchip\xc8\v2.20\avr\avr\include\avr\delay.h \
+ c:\program\ files\microchip\xc8\v2.20\avr\avr\include\util\delay.h \
+ c:\program\ files\microchip\xc8\v2.20\avr\avr\include\util\delay_basic.h \
+ c:\program\ files\microchip\xc8\v2.20\avr\avr\include\math.h
 
 mcc_generated_files/mcc.h:
 
@@ -78,6 +83,8 @@ mcc_generated_files/include/port.h:
 
 mcc_generated_files/include/../utils/compiler.h:
 
+mcc_generated_files/delay.h:
+
 mcc_generated_files/include/cpuint.h:
 
 mcc_generated_files/include/ccp.h:
@@ -103,3 +110,13 @@ fonts.h:
 c:\program\ files\microchip\xc8\v2.20\avr\avr\include\avr\pgmspace.h:
 
 I2C.h:
+
+SBUS.h:
+
+c:\program\ files\microchip\xc8\v2.20\avr\avr\include\avr\delay.h:
+
+c:\program\ files\microchip\xc8\v2.20\avr\avr\include\util\delay.h:
+
+c:\program\ files\microchip\xc8\v2.20\avr\avr\include\util\delay_basic.h:
+
+c:\program\ files\microchip\xc8\v2.20\avr\avr\include\math.h:
